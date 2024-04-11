@@ -5,3 +5,8 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+canvas {
+    position: absolute;
+    background-color: #003C43;
+}
