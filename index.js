@@ -16,7 +16,9 @@ class Pixel {
 
     draw() {
         ctx.fillStyle = "#E3FEF7";
-        ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+        ctx.beginPath();
+        ctx.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2, false)
+        ctx.fill();
     }
 }
 
