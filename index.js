@@ -37,16 +37,18 @@ const pixelPositions = [
 pixelPositions.forEach(({ x, y }) => {
     const pixel = new Pixel(x, y);
     pixel.draw();
-});
+}); 
 
-
-canvas.addEventListener("click", (event) => {
+canvas.addEventListener("mousedown", (event) => {
     ctx.strokeStyle = "#E3FEF7";
     ctx.beginPath();
     ctx.moveTo(event.clientX, event.clientY);
-    canvas.addEventListener("mousemove", (event) => {
+    canvas.addEventListener("mousemove", drawLine = (event) => {
         ctx.lineTo(event.clientX, event.clientY)
         ctx.stroke();
     });
 })
 
+canvas.addEventListener("mouseup", () => {
+    canvas.removeEventListener("mousemove", drawLine);
+});
