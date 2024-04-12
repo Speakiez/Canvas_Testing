@@ -46,6 +46,8 @@ pixelPositions.forEach(({ x, y }) => {
 }); 
 */
 
+// Line Drawing using mouse //
+
 canvas.addEventListener("mousedown", (event) => {
     ctx.strokeStyle = "#E3FEF7";
     ctx.beginPath();
