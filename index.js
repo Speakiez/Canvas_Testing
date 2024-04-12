@@ -10,14 +10,13 @@ class Pixel {
             y
         }
         this.id = id;
-        this.width = 5;
-        this.height = 5;
+        this.pixelwidth = 2;
     }
 
     draw() {
         ctx.fillStyle = "#E3FEF7";
         ctx.beginPath();
-        ctx.arc(this.position.x, this.position.y, 2, 0, Math.PI * 2, false)
+        ctx.arc(this.position.x, this.position.y, this.pixelwidth, 0, Math.PI * 2, false)
         ctx.fill();
     }
 }
@@ -35,10 +34,19 @@ const pixelPositions = [
     { x:500, y:500 }
 ];
 
-const pixels = {};
-
-pixelPositions.forEach(({x, y}, id) => {
-    pixels[id] = new Pixel(x, y, id);
-    pixels[id].draw();
+pixelPositions.forEach(({ x, y }) => {
+    const pixel = new Pixel(x, y);
+    pixel.draw();
 });
 
+const mouse = {
+    x: 0,
+    y: 0
+};
+
+canvas.addEventListener("mousemove", (event) => {
+    mouse.x = event.x;
+    mouse.y = event.y;
+    const pixel = new Pixel(mouse.x, mouse.y);
+    pixel.draw();
+});
