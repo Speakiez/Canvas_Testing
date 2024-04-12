@@ -39,14 +39,14 @@ pixelPositions.forEach(({ x, y }) => {
     pixel.draw();
 });
 
-const mouse = {
-    x: 0,
-    y: 0
-};
 
-canvas.addEventListener("mousemove", (event) => {
-    mouse.x = event.x;
-    mouse.y = event.y;
-    const pixel = new Pixel(mouse.x, mouse.y);
-    pixel.draw();
-});
+canvas.addEventListener("click", (event) => {
+    ctx.strokeStyle = "#E3FEF7";
+    ctx.beginPath();
+    ctx.moveTo(event.clientX, event.clientY);
+    canvas.addEventListener("mousemove", (event) => {
+        ctx.lineTo(event.clientX, event.clientY)
+        ctx.stroke();
+    });
+})
+
