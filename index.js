@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
+/*
 class Pixel {
     constructor(x, y, id) {
         this.position = {
@@ -38,6 +39,7 @@ pixelPositions.forEach(({ x, y }) => {
     const pixel = new Pixel(x, y);
     pixel.draw();
 }); 
+*/
 
 canvas.addEventListener("mousedown", (event) => {
     ctx.strokeStyle = "#E3FEF7";
