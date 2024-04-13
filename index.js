@@ -36,8 +36,7 @@ const pixelPositions = [
     { x:300, y:300 },
     { x:350, y:350 },
     { x:400, y:400 },
-    { x:450, y:450 },
-    { x:500, y:500 }
+    { x:450, y:450 }
 ];
 
 pixelPositions.forEach(({ x, y }) => {
